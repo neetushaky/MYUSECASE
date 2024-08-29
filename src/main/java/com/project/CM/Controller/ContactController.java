@@ -27,5 +27,11 @@ public class ContactController {
 		return ResponseEntity.status(HttpStatus.OK).body(fromid);
 		
 	}
+	@GetMapping("/contact/hello-world")
+	public ResponseEntity<String>getContactDetail(@PathVariable("id") int id){
+		
+		return ResponseEntity.status(HttpStatus.OK).body("Hello-world");
+		
+	}
 
 }
