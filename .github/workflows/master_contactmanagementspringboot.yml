@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy WAR app to Azure Web App - contactmanagementspringboot
+name: Build and deploy JAR app to Azure Web App - contactmanagementspringboot
 
 on:
   push:
@@ -28,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: windows-latest
@@ -49,5 +46,5 @@ jobs:
         with:
           app-name: 'contactmanagementspringboot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_79C8E99F04174687AB77C31DA19D9E2B }}
-          package: '*.war'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_74842C56FD0245AC8FBA005AFCF23027 }}
+          package: '*.jar'
