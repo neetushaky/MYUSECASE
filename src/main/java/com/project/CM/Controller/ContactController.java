@@ -28,7 +28,7 @@ public class ContactController {
 		
 	}
 	@GetMapping("/contact/hello-world")
-	public ResponseEntity<String>getContactDetail(){
+	public ResponseEntity<String>ContactDetail(){
 		
 		return ResponseEntity.status(HttpStatus.OK).body("Hello-world");
 		
